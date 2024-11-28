@@ -183,10 +183,10 @@ epochs = mne.Epochs(
 epochs
 # %%
 # Plot the first five left MI epochs
-# epochs['left'][0:5].plot(scalings='auto')
-epochs.plot(scalings='auto', events=True)
+epochs['left'][0:5].plot(scalings='auto')
+
 # Plot all epochs (will probably crash if you haven't installed mne-qt-browser)
-epochs.plot(scalings='auto', events=True)
+# epochs.plot(scalings='auto', events=True)
 
 # %%
 # Plot the PSD
