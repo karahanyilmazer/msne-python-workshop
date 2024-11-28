@@ -2,7 +2,7 @@
 # !%load_ext autoreload
 # !%autoreload 2
 '''
-Analysis of the Berlin BCI motor imagery dataset using MNE-Python.
+Analysis of the Berlin BCI motor imagery dataset using MNE-Python (solution).
 
 Author:
     Karahan Yilmazer
