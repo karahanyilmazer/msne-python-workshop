@@ -37,6 +37,11 @@ def calc_erds(epochs):
     return erds
 
 
+def plot_erds(erds, channels):
+    # TODO: Write a function to plot the ERD/ERS curves.
+    pass
+
+
 # %% [markdown]
 ## Raw: Continuous data
 # First, load in the continuous EEG recording to MNE Raw objects.
@@ -105,6 +110,8 @@ ica.plot_components()
 
 # %% [markdown]
 # Clearly, ICA001 and ICA032 captured eye blinks. Which is why we can exclude them from our signal.
+
+# %%
 ica.exclude = [1, 32]
 
 # Visualize the effect of excluding the noisy ICA component
@@ -200,9 +207,11 @@ epochs['left'].compute_psd().plot()
 # Set the sigma for the Gaussian smoothing
 sigma = 7
 rest_period = (-1, 0)
+channels = ['C3', 'Cz', 'C4']
 
 # Calculate and plot the ERD/ERS curves
 erds = calc_erds(epochs)
+plot_erds(erds, channels)
 
 # %%
 # Apply common average referencing (CAR)
@@ -210,6 +219,7 @@ epochs_car = epochs.copy().set_eeg_reference(ref_channels='average')
 
 # Plot the ERD/ERS curves of the spatially filtered signal
 erds_car = calc_erds(epochs_car)
+plot_erds(erds_car, channels)
 
 # %% [markdown]
 ## Classification Using CSP
