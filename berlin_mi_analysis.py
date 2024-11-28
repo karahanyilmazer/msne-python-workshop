@@ -5,13 +5,10 @@
 Analysis of the Berlin BCI motor imagery dataset using MNE-Python.
 
 Author:
-    Karahan Yilmazer - 16.04.2022
+    Karahan Yilmazer
 
 Email:
     yilmazerkarahan@gmail.com
-
-Status:
-    In development
 '''
 
 #!%matplotlib qt
@@ -26,6 +23,7 @@ from scipy.ndimage import gaussian_filter1d
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import cross_val_score, train_test_split
+
 from utils import load_data
 
 
