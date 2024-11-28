@@ -43,17 +43,10 @@ def calc_erds(epochs):
 
 # %% Load the data
 part = 'e'  # Select the participant
-data_path = r'C:\Files\Coding\Python\Neuro\data\Motor Imagery\BCICIV'
-file = os.path.join(
-    data_path,
-    'mat_data',
-    'BrainAmp MR plus',
-    'BCICIV_1calib_mat',
-    'BCICIV_calib_ds1' + part + '.mat',
-)  # Adapt the path to your system
+data_path = os.path.join('data', 'BCICIV_calib_ds1' + part + '.mat')
 
 # Load the data
-raw, event_arr, event_id = load_data(file)
+raw, event_arr, event_id = load_data(data_path)
 
 # Print the classes and their encodings
 print('Class 1:', list(event_id.keys())[0], '-->', list(event_id.values())[0])
